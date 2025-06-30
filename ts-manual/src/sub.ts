@@ -1,3 +1,4 @@
-function greeting(user) {
-  return `${user}님 반갑습니다 :)`
+
+export function _sum(a:any,b:any){
+  return a + b;
 }
