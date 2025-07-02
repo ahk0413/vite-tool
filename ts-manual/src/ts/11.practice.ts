@@ -37,7 +37,7 @@ const colors = ["red", "green", "blue"] as const;
 type Color = typeof colors[number] ;
 
 const selected: Color = "red";      // ✅
-const errorTest: Color = "yellow";  // ❌ 오류
+// const errorTest: Color = "yellow";  // ❌ 오류
 
 
 
