@@ -1,6 +1,6 @@
 import gsap from "gsap";
 import { main } from "./main";
-import { deleteMemo, insertMemo } from "./service/service";
+import { deleteMemo, insertMemo, sortMemo } from "./service/service";
 import type { Tables } from "./supabase/database.types";
 // import { supabase } from "./supabase/supabase";
 
@@ -57,6 +57,7 @@ export function handleDragEnd(){
     draggingEl = null;
   }
 
+  sortMemo()
 }
 
 /* 
@@ -100,7 +101,8 @@ export function handleCreate(e:MouseEvent){
   insertMemo({
     title:title.value,
     description:description.value,
-    priority:priority.value as Tables<'memo'>['priority']
+    priority:priority.value as Tables<'memo'>['priority'],
+    position: document.querySelectorAll('article').length 
   })
 
   title.value= '';
